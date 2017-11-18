@@ -399,3 +399,67 @@ class Stm32(CortexMTarget):
         self.add_sources('gnarl', [
             'arm/stm32/%s/svd/handler.S' % self.mcu,
             'arm/stm32/%s/svd/a-intnam.ads' % self.mcu])
+
+class LPC43(CortexMTarget):
+    @property
+    def name(self):
+        return self.board
+
+    @property
+    def parent(self):
+        return CortexMArch
+
+    @property
+    def use_semihosting_io(self):
+        return True
+
+    @property
+    def has_double_precision_fpu(self):
+        return False
+
+    @property
+    def cortex(self):
+        return 'cortex-m4'
+
+    @property
+    def fpu(self):
+        return 'fpv4-sp-d16'
+
+    @property
+    def compiler_switches(self):
+        # The required compiler switches
+        return ('-mlittle-endian', '-mhard-float',
+                '-mcpu=%s' % self.cortex,
+                '-mfpu=%s' % self.fpu,
+                '-mthumb')
+
+    def __init__(self, board):
+		self.board = board
+		super(LPC43, self).__init__()
+
+		self.add_linker_script('arm/stm32/common-RAM.ld', loader='RAM')
+		self.add_linker_script('arm/stm32/common-ROM.ld', loader='ROM')
+		self.add_linker_script('arm/lpc43/memory-map.ld', loader=('RAM', 'ROM'))
+
+		self.add_sources('crt0', [
+            'src/s-bbpara__lpc43.ads',
+            'arm/lpc43/s-lpc43.ads',
+            'arm/lpc43/start-rom.S',
+            'arm/lpc43/start-ram.S',
+            'arm/lpc43/start-common.S',
+            'arm/lpc43/setup_pll.adb',
+            'arm/lpc43/s-bbbopa.ads',
+            'arm/lpc43/s-bbmcpa.ads',
+            'arm/lpc43/svd/i-lpc43.ads',
+            'arm/lpc43/svd/i-lpc43-ccu1.ads',
+            'arm/lpc43/svd/i-lpc43-ccu2.ads',
+            'arm/lpc43/svd/i-lpc43-cgu.ads',
+            'arm/lpc43/svd/i-lpc43-creg.ads',
+            'arm/lpc43/svd/i-lpc43-gpio_port.ads',
+            'arm/lpc43/svd/i-lpc43-scu.ads',
+            'arm/lpc43/svd/i-lpc43-usart.ads'])
+
+        # ravenscar support
+		self.add_sources('gnarl', [
+            'arm/lpc43/svd/handler.S',
+            'arm/lpc43/svd/a-intnam.ads'])

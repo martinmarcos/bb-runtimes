@@ -14,7 +14,7 @@ from build_rts_support.rts_sources import SourceDirs
 from pikeos import ArmPikeOS, PpcPikeOS, X86PikeOS
 
 # Cortex-M runtimes
-from arm.cortexm import Stm32, Sam, SmartFusion2, LM3S
+from arm.cortexm import Stm32, Sam, SmartFusion2, LM3S, LPC43
 
 # Cortex-A/R runtimes
 from arm.cortexar import TMS570, Rpi2, Zynq7000
@@ -60,6 +60,8 @@ def build_configs(target):
         t = SmartFusion2()
     elif target.startswith('stm32'):
         t = Stm32(target)
+    elif target == 'lpc43':
+        t = LPC43(target)
     elif target == 'openmv2':
         t = Stm32(target)
     elif target == 'tms570':
