@@ -30,9 +30,9 @@ __vectors:
 	.word   __gnat_sys_tick_trap /* 15 Systick. */
 	/* MCU interrupts */
 	.word __gnat_irq_trap        /* 16 DAC */
-	.word __gnat_irq_trap        /* 17 IRQ 1. */
+	.word __gnat_irq_trap        /* 17 M0APP */
 	.word __gnat_irq_trap        /* 18 DMA */
-	.word __gnat_irq_trap        /* 19 IRQ 3. */
+	.word __gnat_irq_trap        /* 19 RESERVED_IRQ_1 */
 	.word __gnat_irq_trap        /* 20 FLASH */
 	.word __gnat_irq_trap        /* 21 ETHERNET */
 	.word __gnat_irq_trap        /* 22 SDIO */
@@ -73,13 +73,13 @@ __vectors:
 	.word __gnat_irq_trap        /* 57 GINT1 */
 	.word __gnat_irq_trap        /* 58 EVENTROUTER */
 	.word __gnat_irq_trap        /* 59 C_CAN1 */
-	.word __gnat_irq_trap        /* 60 IRQ 44. */
+	.word __gnat_irq_trap        /* 60 RESERVED_IRQ_2 */
 	.word __gnat_irq_trap        /* 61 ADCHS */
 	.word __gnat_irq_trap        /* 62 ATIMER */
 	.word __gnat_irq_trap        /* 63 RTC */
-	.word __gnat_irq_trap        /* 64 IRQ 48. */
+	.word __gnat_irq_trap        /* 64 RESERVED_IRQ_3 */
 	.word __gnat_irq_trap        /* 65 WWDT */
-	.word __gnat_irq_trap        /* 66 IRQ 50. */
+	.word __gnat_irq_trap        /* 66 M0SUB */
 	.word __gnat_irq_trap        /* 67 C_CAN0 */
 	.word __gnat_irq_trap        /* 68 QEI */
 

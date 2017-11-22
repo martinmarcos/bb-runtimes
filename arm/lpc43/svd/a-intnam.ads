@@ -18,7 +18,9 @@ package Ada.Interrupts.Names is
    --  System tick
    Sys_Tick_Interrupt     : constant Interrupt_ID := -1;
    DAC_Interrupt          : constant Interrupt_ID := 0;
+   M0APP_Interrupt        : constant Interrupt_ID := 1;
    DMA_Interrupt          : constant Interrupt_ID := 2;
+   Reserved_Interrupt_1   : constant Interrupt_ID := 3;
    FLASH_Interrupt        : constant Interrupt_ID := 4;
    ETHERNET_Interrupt     : constant Interrupt_ID := 5;
    SDIO_Interrupt         : constant Interrupt_ID := 6;
@@ -59,10 +61,13 @@ package Ada.Interrupts.Names is
    GINT1_Interrupt        : constant Interrupt_ID := 41;
    EVENTROUTER_Interrupt  : constant Interrupt_ID := 42;
    C_CAN1_Interrupt       : constant Interrupt_ID := 43;
+   Reserved_Interrupt_2   : constant Interrupt_ID := 44;
    ADCHS_Interrupt        : constant Interrupt_ID := 45;
    ATIMER_Interrupt       : constant Interrupt_ID := 46;
    RTC_Interrupt          : constant Interrupt_ID := 47;
+   Reserved_Interrupt_3   : constant Interrupt_ID := 48;
    WWDT_Interrupt         : constant Interrupt_ID := 49;
+   M0SUB_Interrupt        : constant Interrupt_ID := 50;
    C_CAN0_Interrupt       : constant Interrupt_ID := 51;
    QEI_Interrupt          : constant Interrupt_ID := 52;
 
