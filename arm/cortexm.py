@@ -410,6 +410,14 @@ class LPC43(CortexMTarget):
         return CortexMArch
 
     @property
+    def loaders(self):
+        return ('ROM', 'RAM')
+
+    @property
+    def readme_file(self):
+        return 'arm/lpc43/README'
+
+    @property
     def use_semihosting_io(self):
         return True
 
@@ -437,8 +445,8 @@ class LPC43(CortexMTarget):
 		self.board = board
 		super(LPC43, self).__init__()
 
-		self.add_linker_script('arm/stm32/common-RAM.ld', loader='RAM')
-		self.add_linker_script('arm/stm32/common-ROM.ld', loader='ROM')
+		self.add_linker_script('arm/lpc43/common-RAM.ld', loader='RAM')
+		self.add_linker_script('arm/lpc43/common-ROM.ld', loader='ROM')
 		self.add_linker_script('arm/lpc43/memory-map.ld', loader=('RAM', 'ROM'))
 
 		self.add_sources('crt0', [
