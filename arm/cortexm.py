@@ -419,7 +419,7 @@ class LPC43(CortexMTarget):
 
     @property
     def use_semihosting_io(self):
-        return True
+        return False
 
     @property
     def has_double_precision_fpu(self):
@@ -456,6 +456,7 @@ class LPC43(CortexMTarget):
             'arm/lpc43/start-ram.S',
             'arm/lpc43/start-common.S',
             'arm/lpc43/setup_pll.adb',
+            'arm/lpc43/s-textio.adb',
             'arm/lpc43/s-bbbopa.ads',
             'arm/lpc43/s-bbmcpa.ads',
             'arm/lpc43/svd/i-lpc43.ads',
