@@ -31,7 +31,6 @@ pragma Suppress (All_Checks);
 with Interfaces.LPC43;           use Interfaces.LPC43;
 with Interfaces.LPC43.CREG;      use Interfaces.LPC43.CREG;
 with Interfaces.LPC43.CGU;       use Interfaces.LPC43.CGU;
-with Interfaces.LPC43.SCU;       use Interfaces.LPC43.SCU;
 with Interfaces.LPC43.GPIO_PORT; use Interfaces.LPC43.GPIO_PORT;
 
 with System.BB.Board_Parameters; use System.BB.Board_Parameters;
@@ -54,46 +53,10 @@ procedure Setup_Pll is
    MIDFREQ_NSEL_Val : constant Integer := 1;
    MIDFREQ_MSEL_Val : constant Integer := 17;
 
-   procedure Setup_Muxing;
    procedure Setup_Flash_Acceleration;
    procedure Enable_Crystal;
    procedure Setup_Core_Clock;
    procedure Setup_Clock_Bases;
-
-   procedure Setup_Muxing is
-   begin
-
-      SCU_Periph.SFSP2 (0).EPUN := Disable_Pull_Up;
-      SCU_Periph.SFSP2 (0).EPD := Enable_Pull_Down;
-      SCU_Periph.SFSP2 (0).EZI := Enable_Input_Buffer;
-      SCU_Periph.SFSP2 (0).MODE := Function_4;
-
-      SCU_Periph.SFSP2 (1).EPUN := Disable_Pull_Up;
-      SCU_Periph.SFSP2 (1).EPD := Enable_Pull_Down;
-      SCU_Periph.SFSP2 (1).EZI := Enable_Input_Buffer;
-      SCU_Periph.SFSP2 (1).MODE := Function_4;
-
-      SCU_Periph.SFSP2 (2).EPUN := Disable_Pull_Up;
-      SCU_Periph.SFSP2 (2).EPD := Enable_Pull_Down;
-      SCU_Periph.SFSP2 (2).EZI := Enable_Input_Buffer;
-      SCU_Periph.SFSP2 (2).MODE := Function_4;
-
-      SCU_Periph.SFSP2_2 (4).EPUN := Disable_Pull_Up;
-      SCU_Periph.SFSP2_2 (4).EPD := Enable_Pull_Down;
-      SCU_Periph.SFSP2_2 (4).EZI := Enable_Input_Buffer;
-      SCU_Periph.SFSP2_2 (4).MODE := Function_0_Default;
-
-      SCU_Periph.SFSP2_2 (5).EPUN := Disable_Pull_Up;
-      SCU_Periph.SFSP2_2 (5).EPD := Enable_Pull_Down;
-      SCU_Periph.SFSP2_2 (5).EZI := Enable_Input_Buffer;
-      SCU_Periph.SFSP2_2 (5).MODE := Function_0_Default;
-
-      SCU_Periph.SFSP2_2 (6).EPUN := Disable_Pull_Up;
-      SCU_Periph.SFSP2_2 (6).EPD := Enable_Pull_Down;
-      SCU_Periph.SFSP2_2 (6).EZI := Enable_Input_Buffer;
-      SCU_Periph.SFSP2_2 (6).MODE := Function_0_Default;
-
-   end Setup_Muxing;
 
    ------------------------------
    -- Setup Flash Acceleration --
@@ -470,7 +433,6 @@ procedure Setup_Pll is
    end Setup_Clock_Bases;
 begin
 
-   Setup_Muxing;
    Setup_Flash_Acceleration;
 
    if XTAL_Enabled then
