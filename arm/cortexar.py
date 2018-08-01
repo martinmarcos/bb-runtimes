@@ -124,6 +124,8 @@ class TMS570(CortexARTarget):
     def name(self):
         if self.variant == 'tms570ls31':
             base = 'tms570'
+        elif self.variant == 'tms570ls12':
+            base = 'tms570ls12'
         else:
             base = 'tms570lc'
 
@@ -142,7 +144,7 @@ class TMS570(CortexARTarget):
 
     @property
     def cpu(self):
-        if self.variant == 'tms570ls31':
+        if self.variant == 'tms570ls31' or self.variant == 'tms570ls12':
             return 'cortex-r4f'
         else:
             return 'cortex-r5'

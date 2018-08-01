@@ -81,6 +81,10 @@ def build_configs(target):
         t = TMS570('tms570lc43')
     elif target == 'tms570lc_sci':
         t = TMS570('tms570lc43', uart_io=True)
+    elif target == 'ciaa-safety':
+        t = TMS570('tms570ls12')
+    elif target == 'ciaa-safety_sci':
+        t = TMS570('tms570ls12', uart_io=True)
     elif target == 'lm3s':
         t = LM3S()
     elif target == 'm1agl':
