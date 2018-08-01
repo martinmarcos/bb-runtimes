@@ -9,6 +9,7 @@
  *      Copyright (C) 1999-2002 Universidad Politecnica de Madrid           *
  *             Copyright (C) 2003-2006 The European Space Agency            *
  *                   Copyright (C) 2003-2017 AdaCore                        *
+ *                     Copyright (C) 2018 GSTR_UNRC                         *
  *                                                                          *
  * GNAT is free software;  you can  redistribute it  and/or modify it under *
  * terms of the  GNU General Public License as published  by the Free Soft- *
@@ -36,14 +37,14 @@
 
 /* This is a TMS570 specific version of this file */
 
-/* This linker script defines the FLASH and RAM regions for the TMS570LS31
+/* This linker script defines the FLASH and RAM regions for the TMS570LS12
    This also defines the default values for stack size and trap stack size */
 
 MEMORY
 {
-  FLASH (rx)  : ORIGIN = 0x00000000, LENGTH = 3M
-  BOOT  (rx)  : ORIGIN = 0x00008000, LENGTH = 3M - 32K
-  SRAM  (rwx) : ORIGIN = 0x08000000, LENGTH = 256K
+  FLASH (rx)  : ORIGIN = 0x00000000, LENGTH = 1.25M
+  BOOT  (rx)  : ORIGIN = 0x00008000, LENGTH = 1.25M - 32K
+  SRAM  (rwx) : ORIGIN = 0x08000000, LENGTH = 192K
   /* SRAM area mapped at 0x0 */
   LORAM (rwx) : ORIGIN = 0x00000000, LENGTH = 256K
 }
