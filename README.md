@@ -12,7 +12,7 @@ rely on those to just generate the BSP part of the runtime.
 ## generation of BSPs
 
 ```
-./build-rts.py --output=temp --bsps-only <board1> <board2> ...
+./build_rts.py --output=temp --bsps-only <board1> <board2> ...
 ```
 
 The list of supported boards is listed in build-rts.py within build_configs.
