@@ -31,7 +31,7 @@ pragma Suppress (All_Checks);
 with Interfaces.LPC43;           use Interfaces.LPC43;
 with Interfaces.LPC43.CREG;      use Interfaces.LPC43.CREG;
 with Interfaces.LPC43.CGU;       use Interfaces.LPC43.CGU;
-with Interfaces.LPC43.GPIO_PORT; use Interfaces.LPC43.GPIO_PORT;
+--  with Interfaces.LPC43.GPIO_PORT; use Interfaces.LPC43.GPIO_PORT;
 
 with System.BB.Board_Parameters; use System.BB.Board_Parameters;
 with System.LPC43;               use System.LPC43;

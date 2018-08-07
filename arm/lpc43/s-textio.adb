@@ -33,7 +33,7 @@ with Interfaces.LPC43.CCU1;  use Interfaces.LPC43.CCU1;
 with Interfaces.LPC43.CCU2;  use Interfaces.LPC43.CCU2;
 with Interfaces.LPC43.USART; use Interfaces.LPC43.USART;
 
-with System.BB.Parameters;
+--  with System.BB.Parameters;
 
 package body System.Text_IO is
 

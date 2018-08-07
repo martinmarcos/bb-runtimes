@@ -540,14 +540,14 @@ class Stm32(ArmV7MTarget):
             'arm/stm32/%s/svd/handler.S' % self.mcu,
             'arm/stm32/%s/svd/a-intnam.ads' % self.mcu])
 
-class LPC43(CortexMTarget):
+class LPC43(ArmV7MTarget):
     @property
     def name(self):
         return self.board
 
     @property
     def parent(self):
-        return CortexMArch
+        return ArmV7MArch
 
     @property
     def loaders(self):

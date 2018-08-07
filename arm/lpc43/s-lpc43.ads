@@ -23,7 +23,7 @@
 --  This file provides register definitions for the STM32Fx (ARM Cortex M4/7)
 --  microcontrollers from ST Microelectronics.
 
-with Interfaces.LPC43.CGU;
+--  with Interfaces.LPC43.CGU;
 
 package System.LPC43 is
    pragma No_Elaboration_Code_All;
