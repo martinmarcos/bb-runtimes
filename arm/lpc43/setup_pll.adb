@@ -202,7 +202,7 @@ procedure Setup_Pll is
                                            when 4 => PLL1_CTRL_ENUM_4_1,
                                            when others => PLL1_CTRL_ENUM_4_1);
 
-      MSEL : constant PLL1_CTRL_MSEL_Field := Byte (MSEL_Val);
+      MSEL : constant PLL1_CTRL_MSEL_Field := Byte (MSEL_Val - 1);
 
       delay_ticks : Integer := 500;
 
@@ -281,7 +281,8 @@ procedure Setup_Pll is
                                            when 4 => PLL1_CTRL_ENUM_4_1,
                                            when others => PLL1_CTRL_ENUM_4_1);
 
-               MIDFREQ_MSEL : constant PLL1_CTRL_MSEL_Field := Byte (MSEL_Val);
+               MIDFREQ_MSEL : constant PLL1_CTRL_MSEL_Field := Byte (MSEL_Val
+                                                                          - 1);
 
             begin
 
